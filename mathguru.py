@@ -36,7 +36,10 @@ def start_math_guru():
         else:
             result = factorial_function(n)
     elif choice == 3:
-        result = fab_function(n)
+        if n < 0:
+            result = "N/A"
+        else:
+            result = fab_function(n)
     print("The result is: " + str(result))
 
     yes_no = input("Do you want to go again? Yes/No\n")
@@ -60,8 +63,16 @@ def factorial_function(n):
 
 
 def fab_function(n):
-    # TODO: Calc fab(n) here. Return int
-    return 5
+    """
+    We use the modern Fibonacci sequence which start from 0.
+    https://en.wikipedia.org/wiki/Fibonacci_number
+    """
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fab_function(n - 1) + fab_function(n - 2)
 
 
 if __name__ == '__main__':
