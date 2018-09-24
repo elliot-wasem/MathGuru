@@ -31,7 +31,10 @@ def start_math_guru():
     if choice == 1:
         result = power_function(n)
     elif choice == 2:
-        result = faculty_function(n)
+        if n < 0:
+            result = "N/A"
+        else:
+            result = factorial_function(n)
     elif choice == 3:
         result = fab_function(n)
     print("The result is: " + str(result))
@@ -48,9 +51,12 @@ def power_function(n):
     return 5
 
 
-def faculty_function(n):
+def factorial_function(n):
+    """Compute factorial of number n. n must be greater than or equal to 0."""
     # TODO Calc n! here. Return int
-    return 5
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial_function(n - 1)
 
 
 def fab_function(n):
