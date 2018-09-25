@@ -51,7 +51,7 @@ def start_math_guru():
 
 def power_function(n):
     # TODO: Calc 2^n1 here. Return int
-    return 5
+    return 2**n
 
 
 def factorial_function(n):
